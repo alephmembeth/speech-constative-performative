@@ -5,9 +5,11 @@ set more off, permanently
 set scheme s2mono
 
 
-/* quality checks */
+/* correct error in variable names */
 use "data.dta", clear
 
+
+/* quality checks */
 forvalues i = 1/5 {
    encode behaperfcont`i', generate(behaperfcont_num_`i')
 }
@@ -137,12 +139,14 @@ tab qualityfail_global
 drop if qualityfail_global == 1
 keep if lastpage == 67
 
+encode age, generate(age_num)
+
 gen age_group = .
-   replace age_group = 1 if age >= 18 & age < 30
-   replace age_group = 2 if age >= 30 & age < 40
-   replace age_group = 3 if age >= 40 & age < 50
-   replace age_group = 4 if age >= 50 & age < 60
-   replace age_group = 5 if age >= 60 & age < 75
+   replace age_group = 1 if age_num >= 18 & age_num < 30
+   replace age_group = 2 if age_num >= 30 & age_num < 40
+   replace age_group = 3 if age_num >= 40 & age_num < 50
+   replace age_group = 4 if age_num >= 50 & age_num < 60
+   replace age_group = 5 if age_num >= 60 & age_num < 75
 label define age_group_lb 1 "18 – 29" 2 "30 – 39" 3 "40 – 49" 4 "50 – 59" 5 "60 – 74", replace
    label values age_group age_group_lb
 
