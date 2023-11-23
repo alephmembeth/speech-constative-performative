@@ -1,8 +1,8 @@
 # Austin in the Lab
 
-This is a repository for the paper “Austin in the Lab” by Stephan Kornmesser and me.[^1]
+This is a repository for the paper “Austin in the Lab” by Stephan Kornmesser and me, forthcoming in _Topics in Linguistics_.[^1]
 
-- A preprint is available in `/preprint`.
+- The _Topics in Linguistics_ preprint is available in `/preprint`.
 - Data can be found in `/analysis`, along with a do file for analysis with _Stata_ (version 14.2).
 - The study was created with _LimeSurvey_ (version 4.1.18+200416), using the theme `extends_vanilla`. Respective files can be found in `/limesurvey`.
 
