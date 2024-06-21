@@ -5,11 +5,9 @@ set more off, permanently
 set scheme s2mono
 
 
-/* correct error in variable names */
+/* quality checks */
 use "data.dta", clear
 
-
-/* quality checks */
 forvalues i = 1/5 {
    encode behaperfcont`i', generate(behaperfcont_num_`i')
 }
